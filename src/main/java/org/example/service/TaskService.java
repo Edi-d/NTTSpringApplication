@@ -1,5 +1,6 @@
 package org.example.service;
 
+import lombok.AllArgsConstructor;
 import org.example.domain.entity.Task;
 import org.example.repository.TaskRepository;
 import org.springframework.stereotype.Service;

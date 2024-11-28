@@ -1,19 +1,20 @@
 package org.example.controller;
 
+import lombok.AllArgsConstructor;
 import org.example.domain.entity.Task;
 import org.example.service.TaskService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
+@AllArgsConstructor
 @RequestMapping("/tasks")
 public class TaskController {
 
-    @Autowired
-    private TaskService taskService;
+    private final TaskService taskService;
 
     @GetMapping
     public List<Task> listAllTasks() {
