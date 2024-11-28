@@ -1,8 +1,7 @@
-package org.nttspringapp.service;
+package org.example.service;
 
-import org.nttspringapp.domain.entity.Task;
-import org.nttspringapp.repository.TaskRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.example.domain.entity.Task;
+import org.example.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

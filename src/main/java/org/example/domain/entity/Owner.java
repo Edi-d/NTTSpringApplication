@@ -1,4 +1,4 @@
-package org.nttspringapp.domain.entity;
+package org.example.domain.entity;
 
 import jakarta.persistence.*;
 import java.util.List;

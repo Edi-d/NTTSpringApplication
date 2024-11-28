@@ -1,7 +1,7 @@
-package org.nttspringapp.controller;
+package org.example.controller;
 
-import org.nttspringapp.domain.entity.Task;
-import org.nttspringapp.service.TaskService;
+import org.example.domain.entity.Task;
+import org.example.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

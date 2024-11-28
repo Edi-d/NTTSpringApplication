@@ -1,6 +1,6 @@
-package org.nttspringapp.repository;
+package org.example.repository;
 
-import org.nttspringapp.domain.entity.Task;
+import org.example.domain.entity.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
