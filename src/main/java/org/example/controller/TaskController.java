@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @AllArgsConstructor
 @RequestMapping("/tasks")
 public class TaskController {
@@ -21,23 +21,17 @@ public class TaskController {
         return taskService.listAllTasks();
     }
 
-    @GetMapping("/owner/{ownerId}")
-    public List<Task> listTasksByOwner(@PathVariable Long ownerId) {
-        return taskService.listTasksByOwner(ownerId);
-    }
-
     @GetMapping("/{taskId}")
     public ResponseEntity<Task> getTaskById(@PathVariable Long taskId) {
         Task task = taskService.getTaskById(taskId);
         return task != null ? ResponseEntity.ok(task) : ResponseEntity.notFound().build();
     }
 
-    // Update remaining effort
-//    @PutMapping("/{taskId}/effort")
-//    public ResponseEntity<Task> updateRemainingEffort(@PathVariable Long taskId, @RequestParam int effort) {
-//        Task updatedTask = taskService.updateRemainingEffort(taskId, effort);
-//        return updatedTask != null ? ResponseEntity.ok(updatedTask) : ResponseEntity.notFound().build();
-//    }
+    @PutMapping("/{taskId}/effort")
+    public ResponseEntity<Task> updateRemainingEffort(@PathVariable Long taskId, @RequestParam int effort) {
+        Task updatedTask = taskService.updateRemainingEffort(taskId, effort);
+        return updatedTask != null ? ResponseEntity.ok(updatedTask) : ResponseEntity.notFound().build();
+    }
 
     @DeleteMapping("/{taskId}")
     public ResponseEntity<Void> removeTaskById(@PathVariable Long taskId) {

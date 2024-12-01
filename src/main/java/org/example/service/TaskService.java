@@ -14,13 +14,7 @@ public class TaskService {
     private final TaskRepository taskRepository;
 
     public List<Task> listAllTasks() {
-        List<Task> tasks = taskRepository.findAll();
-        tasks.forEach(task -> task.setOwner(null));
-        return tasks;
-    }
-
-    public List<Task> listTasksByOwner(Long ownerId) {
-        return taskRepository.findByOwnerId(ownerId);
+        return taskRepository.findAll();
     }
 
     public Task getTaskById(Long taskId) {
@@ -29,6 +23,19 @@ public class TaskService {
 
     public void removeTaskById(Long taskId) {
         taskRepository.deleteById(taskId);
+    }
+
+    public Task updateRemainingEffort(Long taskId, int effort) {
+        Task task = taskRepository.findById(taskId).orElse(null);
+        if (task != null) {
+            task.setRemainingEffort(effort);
+            return taskRepository.save(task);
+        }
+        return null;
+    }
+
+    public List<Task> findByOwnerId(Long ownerId) {
+        return taskRepository.findByOwnerId(ownerId);
     }
 }
 

@@ -4,14 +4,37 @@ spring:
     username: postgres
     password: 1234
     driver-class-name: org.postgresql.Driver
+    hikari:
+      max-lifetime: 500000
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    hibernate:
-      ddl-auto: update
-    show-sql: true
     properties:
       hibernate:
         format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          batch_size: 25
+          order_inserts: true
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
   java:
     version: 11
+
+  server:
+    port: 8080
+
+  profiles:
+    group:
+      local: local
+      default: local
+    default: default
+
+  sql:
+    init:
+      platform: postgres
+      mode: always
