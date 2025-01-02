@@ -27,6 +27,12 @@ public class Owner {
     @Column(nullable = false, unique = true)
     private String email;
 
+    @Column (nullable = false)
+    private String password;
+
+    @Column (nullable = false)
+    private String role;
+
     /**
      * One-to-Many relationship between Owner and Task
      */

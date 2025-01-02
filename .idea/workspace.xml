@@ -4,11 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68e0a144-ef4e-4f67-9ef0-4a675c77bbd0" name="Changes" comment="pom.xml / maven broken">
+    <list default="true" id="68e0a144-ef4e-4f67-9ef0-4a675c77bbd0" name="Changes" comment="Added application.yml">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/OwnerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OwnerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/import.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/configuration/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/configuration/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/TaskController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/OwnerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/OwnerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/repository/TaskRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +57,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.NTTSpringApplication.executor": "Run",
     "git-widget-placeholder": "master",
@@ -116,7 +129,7 @@
       <option name="presentableId" value="Default" />
       <updated>1732379465663</updated>
       <workItem from="1732379466727" duration="7690000" />
-      <workItem from="1732815483172" duration="3943000" />
+      <workItem from="1732815483172" duration="21244000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml / maven broken">
       <option name="closed" value="true" />
@@ -126,7 +139,31 @@
       <option name="project" value="LOCAL" />
       <updated>1732817826416</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed and formatted pom.xml&#10;Connecting project to db again">
+      <option name="closed" value="true" />
+      <created>1732819929759</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1732819929759</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Adding application.yml">
+      <option name="closed" value="true" />
+      <created>1732820391403</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1732820391403</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added application.yml">
+      <option name="closed" value="true" />
+      <created>1732820563001</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1732820563001</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,7 +171,20 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pom.xml / maven broken" />
-    <option name="LAST_COMMIT_MESSAGE" value="pom.xml / maven broken" />
+    <MESSAGE value="Fixed and formatted pom.xml&#10;Connecting project to db again" />
+    <MESSAGE value="Adding application.yml" />
+    <MESSAGE value="Added application.yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added application.yml" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="javax.servlet.ServletException" package="javax.servlet" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
