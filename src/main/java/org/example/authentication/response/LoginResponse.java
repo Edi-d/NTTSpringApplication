@@ -1,4 +1,4 @@
-package org.example.authentication;
+package org.example.authentication.response;
 
 import lombok.Getter;
 

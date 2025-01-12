@@ -1,4 +1,4 @@
-package org.example.authentication;
+package org.example.authentication.service;
 
 import org.example.domain.entity.Owner;
 import org.example.repository.OwnerRepository;
