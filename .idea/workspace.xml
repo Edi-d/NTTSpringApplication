@@ -4,15 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="68e0a144-ef4e-4f67-9ef0-4a675c77bbd0" name="Changes" comment="Adding GlobalExceptionHandler">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/NTTAppBaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/NTTInternalServerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/service/AuthenticationService.java" afterDir="false" />
+    <list default="true" id="68e0a144-ef4e-4f67-9ef0-4a675c77bbd0" name="Changes" comment="Adding Custom Exceptions // Adding Dto communication">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/authentication/filters/JwtAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/enums/OwnerRoleEnum.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/authentication/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/authentication/service/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/authentication/request/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/authentication/request/LoginRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/authentication/service/OwnerDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/authentication/service/CustomOwnerDetails.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/authentication/util/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/authentication/util/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/OwnerUnauthorizedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/OwnerInvalidCredentialsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/exception/handler/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/handler/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/Owner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/domain/entity/Owner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/filters/JwtAuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/filters/JwtAuthorizationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/OwnerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/service/OwnerService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +133,7 @@
       <updated>1732379465663</updated>
       <workItem from="1732379466727" duration="7690000" />
       <workItem from="1732815483172" duration="21244000" />
-      <workItem from="1736680903197" duration="5347000" />
+      <workItem from="1736680903197" duration="10126000" />
     </task>
     <task id="LOCAL-00001" summary="pom.xml / maven broken">
       <option name="closed" value="true" />
@@ -180,11 +183,38 @@
       <option name="project" value="LOCAL" />
       <updated>1736691869040</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adding Custom Exceptions // Adding Dto communication">
+      <option name="closed" value="true" />
+      <created>1736693687886</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1736693687886</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Adding Custom Exceptions // Adding Dto communication">
+      <option name="closed" value="true" />
+      <created>1736693843803</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1736693843803</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="pom.xml / maven broken" />
@@ -193,7 +223,8 @@
     <MESSAGE value="Added application.yml" />
     <MESSAGE value="Polished Login" />
     <MESSAGE value="Adding GlobalExceptionHandler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding GlobalExceptionHandler" />
+    <MESSAGE value="Adding Custom Exceptions // Adding Dto communication" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Custom Exceptions // Adding Dto communication" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

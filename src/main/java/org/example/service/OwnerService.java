@@ -24,4 +24,8 @@ public class OwnerService {
     public Optional<List<Task>> listTasksByOwner(Long ownerId) {
         return ownerRepository.findById(ownerId).map(Owner::getTasks);
     }
+
+    public Optional<Owner> getOwnerByEmail(String email) {
+        return ownerRepository.findByEmail(email);
+    }
 }

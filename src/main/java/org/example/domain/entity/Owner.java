@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.example.authentication.service.CustomOwnerDetails;
+import org.example.domain.entity.enums.OwnerRoleEnum;
 
 import javax.persistence.*;
 import java.util.List;
@@ -30,8 +32,9 @@ public class Owner {
     @Column (nullable = false)
     private String password;
 
-    @Column (nullable = false)
-    private String role;
+    @Enumerated(EnumType.STRING)
+    @Column (name = "role", nullable = false)
+    private OwnerRoleEnum role = OwnerRoleEnum.OWNER;
 
     /**
      * One-to-Many relationship between Owner and Task

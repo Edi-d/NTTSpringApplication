@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.example.exception.NTTInternalServerException;
 import org.example.util.JsonMapper;
+import org.springframework.stereotype.Service;
 
 import java.security.Key;
 import java.util.Base64;
@@ -21,6 +22,7 @@ import java.util.function.Function;
 @Slf4j
 @Getter
 @NoArgsConstructor
+@Service
 public class JwtService {
 
     public static final String JWT_PARSING_ERROR_MESSAGE = "Invalid JWT Token";
@@ -66,7 +68,6 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody();
     }
-
 
     private Key getSigningKey(String secretKey) {
         return Keys.hmacShaKeyFor(secretKey.getBytes());

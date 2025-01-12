@@ -12,5 +12,4 @@ public class LoginRequest {
 
     public LoginRequest() {
     }
-
 }
