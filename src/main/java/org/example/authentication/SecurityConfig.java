@@ -20,8 +20,8 @@ public class SecurityConfig {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
-                .antMatchers("/admin/**").hasRole("ADMIN")
-                .antMatchers("/user/**").hasRole("USER")
+//                .antMatchers("/admin/**").hasRole("ADMIN")
+                .antMatchers("/owner/**").hasRole("OWNER")
                 .anyRequest().authenticated();
 //                .and()
 //                .addFilter(new JwtAuthenticationFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class))))
