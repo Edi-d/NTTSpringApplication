@@ -1,4 +1,4 @@
-package org.example.domain.dto;
+package org.example.domain.dto.error;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

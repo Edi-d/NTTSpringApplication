@@ -5,7 +5,7 @@ import org.example.authentication.request.LoginRequest;
 import org.example.authentication.request.RegisterRequest;
 import org.example.authentication.response.LoginResponse;
 import org.example.authentication.response.RegisterResponse;
-import org.example.util.JwtUtils;
+import org.example.authentication.util.JwtService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final AuthenticationManager authenticationManager;
-    private final JwtUtils jwtUtil;
+    private final JwtService jwtService;
     private final AuthService authService;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtUtils jwtUtil, AuthService authService) {
+    public AuthController(AuthenticationManager authenticationManager, JwtService jwtService, AuthService authService) {
         this.authenticationManager = authenticationManager;
-        this.jwtUtil = jwtUtil;
+        this.jwtService = jwtService;
         this.authService = authService;
     }
 
@@ -34,9 +34,22 @@ public class AuthController {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getEmail(), loginRequest.getPassword()));
 
-        String token = jwtUtil.generateJwtToken(authentication);
+        String token = jwtService.generateToken(loginRequest.getEmail());
         return ResponseEntity.ok(new LoginResponse(token));
     }
+
+//    @PostMapping("/login")
+//    public ResponseEntity<Void> login(@RequestBody UserLoginRequestDto loginRequest, HttpServletResponse response) {
+//        UserLoginResponseDto loginResponse = authenticationService.login(loginRequest);
+//
+//        Cookie cookie = new Cookie(AUTH_HEADER_NAME, loginResponse.getJwtToken());
+//        cookie.setMaxAge(LOGIN_EXPIRATION_TIME);
+//        cookie.setHttpOnly(true);
+//        cookie.setSecure(true); // Ensure secure cookie if using HTTPS
+//        response.addCookie(cookie);
+//
+//        return ResponseEntity.ok().build();
+//    }
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest registerRequest) {
