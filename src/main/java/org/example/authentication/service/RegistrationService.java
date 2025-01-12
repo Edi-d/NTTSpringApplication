@@ -1,4 +1,4 @@
-package org.example.authentication;
+package org.example.authentication.service;
 
 import org.example.authentication.request.RegisterRequest;
 import org.example.domain.entity.Owner;
@@ -7,12 +7,12 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
-public class AuthService {
+public class RegistrationService {
 
     private final OwnerRepository ownerRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public AuthService(OwnerRepository ownerRepository, PasswordEncoder passwordEncoder) {
+    public RegistrationService(OwnerRepository ownerRepository, PasswordEncoder passwordEncoder) {
         this.ownerRepository = ownerRepository;
         this.passwordEncoder = passwordEncoder;
     }

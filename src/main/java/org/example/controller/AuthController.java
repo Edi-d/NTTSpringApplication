@@ -1,6 +1,6 @@
 package org.example.controller;
 
-import org.example.authentication.AuthService;
+import org.example.authentication.service.RegistrationService;
 import org.example.authentication.request.LoginRequest;
 import org.example.authentication.request.RegisterRequest;
 import org.example.authentication.response.LoginResponse;
@@ -21,12 +21,12 @@ public class AuthController {
 
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
-    private final AuthService authService;
+    private final RegistrationService registrationService;
 
-    public AuthController(AuthenticationManager authenticationManager, JwtService jwtService, AuthService authService) {
+    public AuthController(AuthenticationManager authenticationManager, JwtService jwtService, RegistrationService registrationService) {
         this.authenticationManager = authenticationManager;
         this.jwtService = jwtService;
-        this.authService = authService;
+        this.registrationService = registrationService;
     }
 
     @PostMapping("/login")
@@ -54,7 +54,7 @@ public class AuthController {
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest registerRequest) {
         try {
-            authService.registerOwner(registerRequest);
+            registrationService.registerOwner(registerRequest);
             return ResponseEntity.ok(new RegisterResponse("User registered successfully!"));
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(new RegisterResponse("Registration failed: " + e.getMessage()));

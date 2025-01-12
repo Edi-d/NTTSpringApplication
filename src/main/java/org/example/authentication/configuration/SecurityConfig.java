@@ -25,10 +25,6 @@ public class SecurityConfig {
 //                .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/owner/**").hasRole("OWNER")
                 .anyRequest().authenticated();
-//                .and()
-//                .addFilter(new JwtAuthenticationFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class))))
-//                .addFilter(new JwtAuthorizationFilter(authenticationManager(http.getSharedObject(AuthenticationConfiguration.class))));
-
         return http.build();
     }
 
