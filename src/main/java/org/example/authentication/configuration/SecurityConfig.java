@@ -22,7 +22,7 @@ public class SecurityConfig {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/login").permitAll()
-//                .antMatchers("/admin/**").hasRole("ADMIN") --> not needed yet
+//                .antMatchers("/admin/**").hasRole("ADMIN") --> not needed yetx
                 .antMatchers("/owner/**").hasRole("OWNER")
                 .anyRequest().authenticated();
         return http.build();
