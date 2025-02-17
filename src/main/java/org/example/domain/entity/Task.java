@@ -1,13 +1,15 @@
 package org.example.domain.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,9 +27,14 @@ public class Task {
 
     private int remainingEffort;
 
-    @ManyToOne // Many tasks can be assigned to one owner
+    @ManyToOne
     @JoinColumn(name = "owner_id")
-    @JsonBackReference // Prevents infinite recursion
+    @JsonBackReference
     private Owner owner;
+
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Comment> comments = new ArrayList<>();
 }
+
 
